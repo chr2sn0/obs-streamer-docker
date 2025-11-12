@@ -88,5 +88,5 @@ EOF
 
 echo "OBS Konfiguration erstellt. Starte OBS..."
 
-# Starte OBS
-exec obs --verbose --startstreaming --profile "headless" --scene "scene.json"
+# Starte OBS innerhalb eines virtuellen Bildschirms
+exec xvfb-run --auto-servernum obs --verbose --startstreaming --profile "headless" --scene "scene.json"
