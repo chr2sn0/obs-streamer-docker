@@ -1,0 +1,32 @@
+# === Secrets ===
+# Ignoriere die Datei mit den Umgebungsvariablen, die Secrets enthält
+.env
+
+# === Aus den Vorlagen des Benutzers ===
+
+# Allgemeine Linux/System-Dateien
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+nohup.out
+
+# Log-Dateien
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build-Artefakte & Caches
+.cache
+.parcel-cache
+*.tsbuildinfo
+.ruff_cache/

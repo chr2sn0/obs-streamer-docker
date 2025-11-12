@@ -1,0 +1,2 @@
+# Ignoriere die Datei mit den Umgebungsvariablen, die Secrets enthält
+.env
