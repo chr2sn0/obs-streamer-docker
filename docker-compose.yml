@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  obs-streamer:
+    # Baut das Image aus dem Dockerfile im aktuellen Verzeichnis
+    build: .
+    
+    container_name: obs-streamer
+    restart: unless-stopped
+    # Wichtig für OBS, um stabil zu laufen
+    shm_size: '512mb'
+    ports:
+      - "4455:4455"
+    # Lade Umgebungsvariablen aus der .env-Datei
+    env_file:
+      - .env
+    environment:
+      # --- NDI-Installation (aus Dockerfile) ---
+      # Diese Variable ist fest im Dockerfile definiert und muss nicht in .env
+      - ENABLE_NDI=true
