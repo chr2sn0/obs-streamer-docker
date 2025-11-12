@@ -13,7 +13,3 @@ services:
       - "4455:4455"
       # Port für den eingehenden SRT-Stream (UDP)
       - "${SRT_PORT:-19937}:${SRT_PORT:-19937}/udp"
-    environment:
-      # --- NDI-Installation (aus Dockerfile) ---
-      # Diese Variable ist fest im Dockerfile definiert und muss nicht in .env
-      - ENABLE_NDI=true
