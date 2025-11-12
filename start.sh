@@ -51,22 +51,23 @@ Preset=${PRESET:-veryfast}
 RateControl=CBR
 EOF
 
-# Erstelle die Szene mit der NDI-Quelle
+# Erstelle die Szene mit der SRT-Quelle
 cat <<EOF > "${OBS_SCENES_DIR}/scene.json"
 {
-    "current_program_scene": "NDI Scene",
-    "current_scene": "NDI Scene",
+    "current_program_scene": "SRT Scene",
+    "current_scene": "SRT Scene",
     "scene_order": [
         {
-            "name": "NDI Scene"
+            "name": "SRT Scene"
         }
     ],
     "sources": [
         {
-            "id": "ndi_source",
-            "name": "NDI Source",
+            "id": "ffmpeg_source",
+            "name": "SRT Source",
             "settings": {
-                "source_name": "${NDI_SOURCE}"
+                "input": "srt://0.0.0.0:${SRT_PORT:-19937}?mode=listener",
+                "is_local_file": false
             },
             "version": 2
         }
